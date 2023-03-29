@@ -1,0 +1,82 @@
+
+  .canvas {
+    padding: 30px;
+    max-width: 600px;
+    min-width: 450px;
+    margin-top: 50px;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  }
+  @media screen and (max-width: 450px) {
+    .canvas {
+      padding: 20px;
+      border-radius: 0;
+      min-width: 360px;
+    }
+  }
+  .canvas .title {
+    color: #444;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  @media screen and (max-width: 450px) {
+    .canvas .title {
+      font-size: 1.6rem;
+    }
+  }
+  .canvas .userInput {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .canvas .clearButtons {
+    align-self: flex-end;
+  }
+  .canvas .emptyList {
+    padding: 15px;
+    color: #999;
+    font-size: 1.2rem;
+  }
+  .canvas ul {
+    margin: 12px 0;
+  }
+  .canvas ul .task_item {
+    background: #fff;
+    box-shadow: 2px 2px 10px #eee;
+    padding: 8px 18px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #eee;
+  }
+  .canvas ul .task_item:not(:last-of-type) {
+    border-bottom: 1px solid #eee;
+  }
+  .canvas ul .task_item:hover {
+    border: 1px solid #d3d3d3;
+  }
+  .canvas ul .task_item.completed {
+    box-shadow: none;
+  }
+  .canvas ul .task_item.completed > .task_item_title {
+    color: #ccc;
+    font-style: italic;
+  }
+  .canvas ul .task_item .task_item_title {
+    color: #555;
+    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+  }
+  .canvas ul .task_item .task_item_title .date {
+    font-size: 0.9rem;
+  }
+  .canvas ul.incomplete {
+    border-bottom: 1px solid #ccc;
+  }

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>PODRÓŻE</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/strona.css" rel="stylesheet" />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                <span class="site-heading-upper text-primary mb-3">Podróże</span>
+                <span class="site-heading-lower">
+                    <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                </span>
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="index.html">Home</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="about.html">Europa</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="products.html">Azja</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="store.html">Australia</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="xyz.html">Ameryka Północna</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- ZEGAR -->
+        <div class='time text-center' id='time'>
+        </div>
+
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/nepal.jpg" alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+                            <span class="section-heading-upper"> Poznajmy wyjątkowe zakątki świata.</span>
+                            <span class="section-heading-lower">Podróże</span>
+                        </h2>
+                        <p class="mb-3">Podróż może być fascynującą przygodą, źródłem inspiracji, możliwością odkrywania nieznnanego, poznawania obcych krajów, ludzi i obyczajów.</p>
+                       
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 mx-auto">
+                        <div class="cta-inner bg-faded text-center rounded">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper"> przemieszczanie się ludzi pomiędzy odległymi geograficznie lokalizacjami. </span>
+                                <span class="section-heading-lower">Czym są podróże?</span>
+                            </h2>
+                            <p class="mb-0"> 
+                                Andre Gide, francuski prozaik i podróżnik, lauerat Nagrody Nobla powiedział kiedyś, że „człowiek nie może odkryć nowych oceanów, dopóki nie znajdzie odwagi żeby stracić z oczu brzeg’. Tym samym podkreśla, że podróż jest czymś co wymaga odwagii. Jednak czym jest owa podróż? Jakie może mieć dla człowieka znaczenie?
+
+Dla jednych wyjazd z miejsca zamieszkania może być przede wszystkim ucieczką od problemów, szarości życia, chęcią zmiany i poszukiwaniem lepszego.
+                               
+    </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2022</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <div id="vue-App">
+            <span class="text-white">{{text}}</span>
+
+            <input type="range" min="1" max="5"
+                @change="zmienPunkty($event)" />
+        </div>
+
+        <script>
+            let App_vue = new Vue //scrypt w Vue drugi-pasek przeciągania
+            ({
+                el: "#vue-App",
+                data: {
+                    text: 'niesamowicie',
+                    punkty: 5
+                },
+                mounted() {},
+                methods: {
+                    zmienPunkty(event) {
+                        this.punkty = event.target.value;
+                        if (this.punkty == 1) {
+                            this.text = 'złe';
+                        } else if (this.punkty == 2) {
+                            this.text = 'średnio';
+                        } else if (this.punkty == 3) {
+                            this.text = 'dobrze';
+                        } else if (this.punkty == 4) {
+                            this.text = 'wspaniale';
+                        } else {
+                            this.text = 'niesamowicie';
+                        }
+                    }
+                }
+            });
+
+            //java script 1
+            const typedTextSpan = document.querySelector(".typed-text");
+            const cursorSpan = document.querySelector(".cursor");
+
+            const textArray = ["kraje", "kontynenty", "miasta"];
+            const typingDelay = 200;
+            const erasingDelay = 100;
+            const newTextDelay = 2000; 
+            let textArrayIndex = 0;
+            let charIndex = 0;
+
+            function type() 
+            {
+                if (charIndex < textArray[textArrayIndex].length) {
+                    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove("typing");
+                    setTimeout(erase, newTextDelay);
+                }
+            }
+
+            function erase() {
+                if (charIndex > 0) {
+                    if(!cursorSpan.classList.contains("typing")) {
+                        cursorSpan.classList.add("typing");
+                    }
+                    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                    charIndex--;
+                    setTimeout(erase, erasingDelay);
+                } 
+                else {
+                    cursorSpan.classList.remove("typing");
+                    textArrayIndex++;
+                    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+                    setTimeout(type, typingDelay + 1100);
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function() { 
+                if(textArray.length) setTimeout(type, newTextDelay + 250);
+            });
+        </script>
+
+
+<!-- Java script skrypt dwa -->
+<script src="js/script.js"></script>
+<script>
+ podkresl(0);
+
+//zegar 
+var monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"
+];
+var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function checkTime() {
+  var date = new Date();
+  var sufix = '';
+  var hours = ('0' + date.getHours()).slice(-2);
+  var minutes = ('0' + date.getMinutes()).slice(-2);
+  var day = date.getDate();
+  var month = monthNames[date.getMonth()];
+  var weekday = dayNames[date.getDay()];
+  if (day > 3 && day < 21) sufix = 'th';
+  switch (day % 10) {
+    case 1:
+      sufix = "st";
+    case 2:
+      sufix = "nd";
+    case 3:
+      sufix = "rd";
+    default:
+      sufix = "th";
+  }
+  document.getElementById('time').innerHTML = "  It's <span class='hour'>" + hours + ":" + minutes + "</span><br/><span class='date'>" + month + ' ' + day + sufix + ', ' + weekday + '.';
+}
+
+setInterval(checkTime(), 1000);
+
+</script>
+
+
+
+
+
+    </body>
+</html>
